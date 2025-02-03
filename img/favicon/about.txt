@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Balsamiq Sans
+- Font Author: undefined
+- Font Source: https://fonts.gstatic.com/s/balsamiqsans/v14/P5sEzZiAbNrN8SB3lQQX7Pnc8dkdIYdNHzs.ttf
+- Font License: undefined)
