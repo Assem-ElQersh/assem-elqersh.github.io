@@ -20,14 +20,12 @@
     />
     <meta
       name="image"
-      content="https://assem-elqersh.github.io/img/og-img.png"
+      content="https://assem-elqersh.github.io/img/preview.png"
     />
-    <!-- TODO: to be changed displays when shared on social media -->
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://assem-elqersh.github.io/" />
-    <!-- TODO: to be changed -->
     <meta property="og:title" content="Assem ElQersh - AI & ML Engineer" />
     <meta
       property="og:description"
@@ -35,14 +33,12 @@
     />
     <meta
       property="og:image"
-      content="https://assem-elqersh.github.io/img/og-img.png"
+      content="https://assem-elqersh.github.io/img/preview.png"
     />
-    <!-- TODO: to be changed -->
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://assem-elqersh.github.io/" />
-    <!-- TODO: to be changed -->
     <meta name="twitter:creator" content="@AssemElQersh" />
     <meta property="twitter:title" content="Assem ElQersh - AI & ML Engineer" />
     <meta
@@ -51,16 +47,14 @@
     />
     <meta
       property="twitter:image"
-      content="https://assem-elqersh.github.io/img/og-img.png"
+      content="https://assem-elqersh.github.io/img/preview.png"
     />
-    <!-- TODO: to be changed -->
 
     <!-- Google Site Verification -->
     <meta
       name="google-site-verification"
       content="8gM59i43qqJm5atLwsirYdIBcmHfAAzmF5CW4QePgK4"
     />
-    <!-- TODO: to be changed verify site ownership -->
 
     <!-- site favicon link -->
     <link
@@ -90,54 +84,7 @@
     <link rel="stylesheet" href="./css/font-root-styles/okinesans.css" />
     <link rel="stylesheet" href="./css/font-root-styles/satoshi.css" />
 
-    <style>
-      object[data="img/c.svg"],
-      object[data="img/cpp.svg"],
-      object[data="img/tensorflow.svg"],
-      object[data="img/pytorch.svg"],
-      object[data="img/numpy.svg"],
-      object[data="img/pandas.svg"],
-      object[data="img/opencv.svg"]  {
-        width: 50px; /* Adjust as needed */
-        height: 50px; /* Adjust as needed */
-        display: inline-block;
-        filter: invert(1); /* Inverts black to white */
-      }
 
-            /* Adjust the container alignment for the C skill */
-      .programming-languages .skill object[data="img/c.svg"] {
-        display: block; /* Forces logo to appear above the text */
-        margin: 0 auto; /* Centers the logo horizontally */
-        text-align: center; /* Ensures the text is centered under the logo */
-        display: flex;
-        flex-direction: column; /* Stacks the logo and text vertically */
-        align-items: center;
-        position: relative; /* Enables positioning adjustments */
-        top: -5px; /* Moves the logo up by 10px; adjust as needed */
-      }
-
-  
-      object[data="img/c.svg"]:hover,
-      object[data="img/cpp.svg"]:hover,
-      object[data="img/tensorflow.svg"]:hover,
-      object[data="img/pytorch.svg"]:hover,
-      object[data="img/numpy.svg"]:hover,
-      object[data="img/pandas.svg"]:hover,
-      object[data="img/opencv.svg"]:hover {
-        filter: invert(1) brightness(1.5); /* Optional hover effect */
-      }
-
-      .typing::after {
-        content: "|";
-        animation: blink 1s infinite;
-        margin-left: 2px;
-      }
-    
-      @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-      }
-    </style>
   </head>
 
   <body>
@@ -145,11 +92,11 @@
       <nav>
         <a href="/">
           <h1>
-            <span class="logo">ASSEM</span>
+            <span class="logo">Assem ElQersh</span>
           </h1>
         </a>
 
-        <ul class="nav-menu">
+        <ul class="nav-menu" role="navigation" aria-label="Main navigation">
           <li class="nav-link">
             <a href="#about">About</a>
           </li>
@@ -168,9 +115,10 @@
 
           <li class="nav-link">
             <a 
-              href="https://raw.githubusercontent.com/Assem-ElQersh/assem-elqersh.github.io/main/Assem%20ElQersh%20-%20CV.pdf"
-              download="Assem_ElQersh_Resume.pdf"
-              target="_blank">
+              href="#"
+              onclick="downloadBothCVs(event)"
+              role="button"
+              aria-label="Download both CV versions (AI & Software Engineering)">
               Resume
             </a>
           </li>
@@ -326,7 +274,7 @@
           </li>
         </ul>
 
-        <button class="hamburger" type="button" name="menu button">
+        <button class="hamburger" type="button" name="menu button" aria-label="Toggle navigation menu" aria-expanded="false">
           <div class="menu-bar"></div>
         </button>
       </nav>
@@ -335,13 +283,13 @@
     <main>
       <section>
         <span class="salutation">Hi there!</span>
-        <h1>I am <span class="name-highlight">Assem ElQersh</span>.</h1>
+        <h1><span class="name-highlight">Assem ElQersh</span></h1>
 
         <p class="declaration">
           I build intelligent solutions with AI & ML
         </p>
 
-        <p style="text-align: justify">
+        <p class="text-justify">
           As a Computer Engineer & AI/ML Specialist, I create intelligent, innovative solutions
           that blend cutting-edge technology with impactful applications. My work focuses
           on delivering exceptional experiences and solving complex challenges with precision and creativity.
@@ -349,10 +297,11 @@
 
         <div class="cta-box">
           <a href="#contact" class="cta cta1">Reach out</a>
-          <a href="https://raw.githubusercontent.com/Assem-ElQersh/assem-elqersh.github.io/main/Assem%20ElQersh%20-%20CV.pdf"
-             target="_blank"
+          <a href="#"
+             onclick="downloadBothCVs(event)"
              class="cta cta2"
-             download>
+             role="button"
+             aria-label="Download both CV versions (AI & Software Engineering)">
              Resume
           </a>
         </div>
@@ -547,13 +496,13 @@
             <div class="project-main-info">
               <span>Project #1</span>
               <h3>Sign-to-Text Translation System Using Arabic Sign Language</h3>
-              <p style="text-align: justify">
+              <p class="text-justify">
                 A web application designed to translate Arabic sign language into text in real-time, aiming to bridge the communication gap between deaf and non-deaf individuals.
               </p>
     
               <div class="project-links">
-                <a href="https://github.com/Assem-ElQersh/Sign-to-Text-Translation-System-Using-Arabic-Sign-Language" target="_blank">
-                  <img src="img/github.svg" alt="github repo link icon" />
+                <a href="https://github.com/Assem-ElQersh/Sign-to-Text-Translation-System-Using-Arabic-Sign-Language" target="_blank" aria-label="View Sign-to-Text Translation System project on GitHub">
+                  <img src="img/github.svg" alt="GitHub repository" />
                 </a>
               </div>
             </div>
@@ -564,8 +513,8 @@
           </div>
     
           <div class="project-image-box">
-            <a href="https://github.com/Assem-ElQersh/Sign-to-Text-Translation-System-Using-Arabic-Sign-Language" target="_blank" class="project-img-link">
-              <img src="img/Sign-to-Text-Translation-System.png" alt="Project Preview Image" />
+            <a href="https://github.com/Assem-ElQersh/Sign-to-Text-Translation-System-Using-Arabic-Sign-Language" target="_blank" class="project-img-link" aria-label="View Sign-to-Text Translation System project">
+              <img src="img/Sign-to-Text-Translation-System.png" alt="Sign-to-Text Translation System project preview showing Arabic sign language detection interface" loading="lazy" />
             </a>
           </div>
         </div>
@@ -576,7 +525,7 @@
             <div class="project-main-info">
               <span>Project #2</span>
               <h3>News Lies</h3>
-              <p style="text-align: justify">
+              <p class="text-justify">
                 Advanced Arabic fake news detection model utilizing LSTM and AraBERT. It leverages the Arabic Fake News Dataset (AFND) to classify news articles as credible, not credible, or undecided. The project includes text preprocessing, model training, and evaluation using TensorFlow.
               </p>
 
@@ -593,8 +542,8 @@
           </div>
 
           <div class="project-image-box">
-            <a href="https://github.com/Assem-ElQersh/NewsLies" target="_blank" class="project-img-link">
-              <img src="img/news-lies.png" alt="Project Preview Image" />
+            <a href="https://github.com/Assem-ElQersh/NewsLies" target="_blank" class="project-img-link" aria-label="View NewsLies project">
+              <img src="img/news-lies.png" alt="NewsLies fake news detection project preview showing LSTM and AraBERT model interface" loading="lazy" />
             </a>
           </div>
         </div>
@@ -605,7 +554,7 @@
             <div class="project-main-info">
               <span>Project #3</span>
               <h3>Rock-Paper-Scissors Game</h3>
-              <p style="text-align: justify">
+              <p class="text-justify">
                 A real-time Rock-Paper-Scissors game using OpenCV, cvzone, and hand gesture recognition. 
                 Players compete against an AI, making hand gestures via webcam, with automatic score tracking.
               </p>
@@ -623,8 +572,8 @@
           </div>
 
           <div class="project-image-box">
-            <a href="https://github.com/Assem-ElQersh/Rock-Paper-Scissors-Game" target="_blank" class="project-img-link">
-              <img src="img/rock-paper-scissors.png" alt="Project Preview Image" />
+            <a href="https://github.com/Assem-ElQersh/Rock-Paper-Scissors-Game" target="_blank" class="project-img-link" aria-label="View Rock-Paper-Scissors Game project">
+              <img src="img/rock-paper-scissors.png" alt="Rock-Paper-Scissors game project preview showing hand gesture recognition interface" loading="lazy" />
             </a>
           </div>
         </div>
@@ -636,7 +585,7 @@
             <div class="project-main-info">
               <span>Project #4</span>
               <h3>Color Identification Lab</h3>
-              <p style="text-align: justify">
+              <p class="text-justify">
                 A Python-based tool for identifying colors in images using OpenCV and the LAB (CIELAB) color space for improved perceptual accuracy. Users can click on any part of an image to detect the closest color match from a predefined dataset.
               </p>
 
@@ -653,8 +602,153 @@
           </div>
 
           <div class="project-image-box">
-            <a href="https://github.com/Assem-ElQersh/Color-Identification-Lab" target="_blank" class="project-img-link">
-              <img src="img/color-identifier.png" alt="Project Preview Image" />
+            <a href="https://github.com/Assem-ElQersh/Color-Identification-Lab" target="_blank" class="project-img-link" aria-label="View Color Identification Lab project">
+              <img src="img/color-identifier.png" alt="Color Identification Lab project preview showing color detection interface using OpenCV" loading="lazy" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project project5">
+          <div class="project-details-box">
+            <div class="project-main-info">
+              <span>Project #5</span>
+              <h3>MedFlow: AI Medical Assistance System</h3>
+              <p class="text-justify">
+                An AI-driven platform for medical diagnostics combining symptom assessment chatbot, X-ray image analysis, and clinical decision support. Implemented deep learning models including VDSR and SRGAN for image enhancement to improve diagnostic accuracy.
+              </p>
+
+              <div class="project-links">
+                <a href="https://github.com/Assem-ElQersh/MedFlow" target="_blank">
+                  <img src="img/github.svg" alt="github repo link icon" />
+                </a>
+              </div>
+            </div>
+
+            <div class="project-tools">
+              <p>Python, Deep Learning, Medical AI, VDSR, SRGAN</p>
+            </div>
+          </div>
+
+          <div class="project-image-box">
+            <a href="https://github.com/Assem-ElQersh/MedFlow" target="_blank" class="project-img-link" aria-label="View MedFlow project">
+              <img src="img/medflow.png" alt="MedFlow AI medical assistance system preview" loading="lazy" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project project6">
+          <div class="project-details-box">
+            <div class="project-main-info">
+              <span>Project #6</span>
+              <h3>Real-time Face Detection System</h3>
+              <p class="text-justify">
+                Built dual-architecture face detection system with beginner and advanced implementations. Features HOG detection, 68-point facial landmarks, and DeepFace integration with SQLite database for comprehensive face recognition capabilities.
+              </p>
+
+              <div class="project-links">
+                <a href="https://github.com/Assem-ElQersh/Real-time-Face-Detection" target="_blank">
+                  <img src="img/github.svg" alt="github repo link icon" />
+                </a>
+              </div>
+            </div>
+
+            <div class="project-tools">
+              <p>Python, OpenCV, DeepFace, SQLite, Computer Vision</p>
+            </div>
+          </div>
+
+          <div class="project-image-box">
+            <a href="https://github.com/Assem-ElQersh/Real-time-Face-Detection" target="_blank" class="project-img-link" aria-label="View Real-time Face Detection project">
+              <img src="img/real-time face detection.png" alt="Real-time face detection system preview showing facial landmarks" loading="lazy" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="project project7">
+          <div class="project-details-box">
+            <div class="project-main-info">
+              <span>Project #7</span>
+              <h3>Face Mask Detection</h3>
+              <p class="text-justify">
+                Developed real-time COVID safety system achieving 99.2% accuracy using PyTorch and MobileNetV2. Optimized for mobile deployment with inference time under 100ms on 10K+ face dataset for efficient real-world applications.
+              </p>
+
+              <div class="project-links">
+                <a href="https://github.com/Assem-ElQersh/Face-Mask-Detection" target="_blank">
+                  <img src="img/github.svg" alt="github repo link icon" />
+                </a>
+              </div>
+            </div>
+
+            <div class="project-tools">
+              <p>PyTorch, MobileNetV2, Computer Vision, Mobile Optimization</p>
+            </div>
+          </div>
+
+          <div class="project-image-box">
+            <a href="https://github.com/Assem-ElQersh/Face-Mask-Detection" target="_blank" class="project-img-link" aria-label="View Face Mask Detection project">
+              <img src="img/face mask detection.png" alt="Face mask detection system preview showing real-time detection" loading="lazy" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="project project8">
+          <div class="project-details-box">
+            <div class="project-main-info">
+              <span>Project #8</span>
+              <h3>Personal Assistant</h3>
+              <p class="text-justify">
+                Built a voice-controlled Python application with 13+ integrated modules for system automation. Features speech recognition, API integration, and system controls for comprehensive digital assistance including weather updates and file management.
+              </p>
+
+              <div class="project-links">
+                <a href="https://github.com/Assem-ElQersh/Personal-Assistant" target="_blank">
+                  <img src="img/github.svg" alt="github repo link icon" />
+                </a>
+              </div>
+            </div>
+
+            <div class="project-tools">
+              <p>Python, Speech Recognition, API Integration, System Automation</p>
+            </div>
+          </div>
+
+          <div class="project-image-box">
+            <a href="https://github.com/Assem-ElQersh/Personal-Assistant" target="_blank" class="project-img-link" aria-label="View Personal Assistant project">
+              <img src="img/personal assistant system.png" alt="Personal Assistant application preview showing voice control interface" loading="lazy" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 9 -->
+        <div class="project project9">
+          <div class="project-details-box">
+            <div class="project-main-info">
+              <span>Project #9</span>
+              <h3>Object Detection Applications</h3>
+              <p class="text-justify">
+                Developed browser-based applications using TensorFlow.js for real-time object detection. Created implementations for both CDN-based and Node.js environments with multiple detection models including COCO-SSD and BlazeFace for various object recognition tasks.
+              </p>
+
+              <div class="project-links">
+                <a href="https://github.com/Assem-ElQersh/Object-Detection-App-2" target="_blank">
+                  <img src="img/github.svg" alt="github repo link icon" />
+                </a>
+              </div>
+            </div>
+
+            <div class="project-tools">
+              <p>TensorFlow.js, React, JavaScript, Computer Vision</p>
+            </div>
+          </div>
+
+          <div class="project-image-box">
+            <a href="https://github.com/Assem-ElQersh/Object-Detection-App-2" target="_blank" class="project-img-link" aria-label="View Object Detection Applications project">
+              <img src="img/object detection applications.png" alt="Object Detection Applications project preview showing real-time detection interface" loading="lazy" />
             </a>
           </div>
         </div>
@@ -667,6 +761,8 @@
         </div>
 
         <div class="notable-projects-box">
+          <!-- First Row - 4 Projects -->
+          <div class="projects-row">
           <!-- Project 1 -->
           <div class="side-project">
             <div>
@@ -677,7 +773,7 @@
 
             <h3>MIPS Processor Designs</h3>
 
-            <p style="text-align: left">
+              <p class="text-left">
               Comprehensive repository containing Verilog implementations of MIPS processors, including both single-cycle and multi-cycle architectures, each with full simulation testbenches and modular design components.
             </p>
 
@@ -694,7 +790,7 @@
 
             <h3>Train Ticketing System</h3>
 
-            <p style="text-align: left">
+              <p class="text-left">
               A comprehensive train ticketing system that allows administrators to manage train schedules and passengers to book tickets, supporting functionalities like adding train details, bulk uploading via CSV, and real-time availability updates.
             </p>
 
@@ -711,22 +807,88 @@
 
             <h3>Robotics Projects Hub</h3>
 
-            <p style="text-align: left">
+              <p class="text-left">
               An open-source hub for diverse robotics projects, including pathfinding algorithms, control systems, and simulations, ideal for enthusiasts, researchers, and engineers exploring practical and theoretical aspects of robotics.
             </p>
 
             <span>Python, Robotics, Algorithms</span>
           </div>
+
+            <!-- Project 4 -->
+            <div class="side-project">
+              <div>
+                <a href="https://github.com/Assem-ElQersh/Ishihara-Kmeans" target="_blank">
+                  <img src="img/github.svg" alt="github repo link icon" />
+                </a>
+              </div>
+
+              <h3>Ishihara K-means Library</h3>
+
+              <p class="text-left">
+                Created medical computer vision Python package with CLI for color blindness detection. Implemented K-means clustering algorithms specifically for Ishihara test analysis, providing automated assessment for color vision deficiencies.
+              </p>
+
+              <span>Python, Medical AI, Computer Vision, K-means Clustering</span>
+            </div>
+          </div>
+
+          <!-- Second Row - 3 Projects -->
+          <div class="projects-row">
+            <!-- Project 5 -->
+            <div class="side-project">
+              <div>
+                <a href="https://github.com/Assem-ElQersh/SIFT-Feature-Extraction-and-Matching" target="_blank">
+                  <img src="img/github.svg" alt="github repo link icon" />
+                </a>
+              </div>
+
+              <h3>SIFT Feature Extraction and Matching</h3>
+
+              <p class="text-left">
+                Implemented advanced object detection using SIFT algorithms, homography, and RANSAC for robust feature matching. Achieved accurate object recognition and tracking in various lighting and orientation conditions.
+              </p>
+
+              <span>Python, OpenCV, SIFT, Computer Vision, RANSAC</span>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="side-project">
+              <div>
+                <a href="https://github.com/Assem-ElQersh/MediTrack-HMS" target="_blank">
+                  <img src="img/github.svg" alt="github repo link icon" />
+                </a>
+              </div>
+
+              <h3>MediTrack-HMS: Hospital Management System</h3>
+
+              <p class="text-left">
+                Created comprehensive hospital management system in Java with GUI interface. Implemented patient records management, appointment scheduling, and billing systems with modular architecture and robust data validation.
+              </p>
+
+              <span>Java, GUI, Database Management, Healthcare Systems</span>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="side-project">
+              <div>
+                <a href="https://github.com/Assem-ElQersh/Particle-Collision-Simulation" target="_blank">
+                  <img src="img/github.svg" alt="github repo link icon" />
+                </a>
+              </div>
+
+              <h3>Particle Collision Simulation</h3>
+
+              <p class="text-left">
+                Built real-time physics engine in C using Raylib for interactive particle simulations. Implemented collision detection algorithms and physics calculations for realistic particle behavior with optimized rendering performance.
+              </p>
+
+              <span>C, Raylib, Physics Simulation, Real-time Rendering</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <style>
-      object {
-        width: 50px; /* Adjust width as needed */
-        height: 50px; /* Adjust height as needed */
-        display: inline-block;
-      }
-    </style>
+
     
     <section id="skills">
       <div class="separator">
@@ -988,5 +1150,18 @@
       <p>Designed and Developed by <span>Assem ElQersh</span></p>
     </footer>
     <script type="text/javascript" src="js/main.js"></script>
+    <script>
+      // Register service worker for PWA functionality
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('SW registered with scope: ', registration.scope);
+            }, function(err) {
+              console.log('SW registration failed: ', err);
+            });
+        });
+      }
+    </script>
   </body>
 </html>

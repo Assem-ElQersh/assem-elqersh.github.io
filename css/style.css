@@ -27,14 +27,11 @@ body {
 }
 
 body {
-  /* background-color: rgb(34, 40, 49); */
   background-color: rgb(0, 0, 0);
-
   font-family: "Satoshi 400";
   font-size: 1.5rem;
   font-weight: 300;
   line-height: 1.5;
-  /* color: rgb(204, 213, 243); */
   color: rgb(208, 212, 212);
 }
 
@@ -75,14 +72,17 @@ h4 {
 }
 
 .logo {
-  background: -webkit-linear-gradient(
-    top right,
-    rgba(18, 55, 246, 1),
-    rgba(9, 244, 244, 1)
+  background: linear-gradient(
+    90deg,
+    rgba(24, 185, 207, 0.9) 0%,
+    #6688ff 50%,
+    rgba(24, 185, 207, 0.9) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-family: "GeneralSans 700";
+  font-weight: 700;
 }
 
 .featured-projects-box h3 {
@@ -114,14 +114,23 @@ a > img:hover {
 }
 
 header {
+  position: sticky;
+  top: 0;
   padding: 1rem 2rem;
   border-bottom: 1px solid rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
+  z-index: 100;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+nav h1 {
+  font-size: 2rem;
+  margin: 0;
 }
 
 nav img {
@@ -275,14 +284,17 @@ main {
 }
 
 .name-highlight {
-  background: -webkit-linear-gradient(
-    top right,
-    rgba(18, 55, 246, 1),
-    rgba(9, 244, 244, 1)
+  background: linear-gradient(
+    90deg,
+    rgba(24, 185, 207, 0.9) 0%,
+    #6688ff 50%,
+    rgba(24, 185, 207, 0.9) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-family: "GeneralSans 700";
+  font-weight: 700;
 }
 
 .declaration {
@@ -414,7 +426,6 @@ main {
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
-  /* margin-bottom: 0.5rem; */
   padding: 0.3rem;
   border-radius: 1.8rem;
   height: max-content;
@@ -518,19 +529,24 @@ h3 {
 
 .project-image-box {
   position: relative;
+  width: 500px;
+  height: 312px;
+  overflow: hidden;
 }
 
 .project-img-link {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 500px;
+  height: 312px;
 }
 
 .project-img-link > img {
-  width: 100%;
-  height: 100%;
+  width: 500px;
+  height: 312px;
   object-fit: cover;
+  object-position: center;
   border-radius: 1.2rem 1.2rem 0 0;
+  display: block;
 }
 
 .project-img-link > img:hover {
@@ -540,12 +556,100 @@ h3 {
 .notable-projects-box {
   display: flex;
   flex-direction: column;
+  gap: 3rem;
+}
+
+.projects-row {
+  display: grid;
   gap: 2rem;
+  justify-items: center;
+  justify-content: center;
+}
+
+.projects-row:first-child {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 100%;
+}
+
+.projects-row:last-child {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments for projects rows */
+@media screen and (max-width: 719px) {
+  .projects-row:first-child,
+  .projects-row:last-child {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .project-img-link > img {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  
+  .project-image-box {
+    width: 400px;
+    height: 250px;
+    overflow: hidden;
+  }
+  
+  .project-img-link {
+    width: 400px;
+    height: 250px;
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1023px) {
+  .projects-row:first-child {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .projects-row:last-child {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .project-img-link > img {
+    width: 500px;
+    height: 312px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  
+  .project-image-box {
+    width: 500px;
+    height: 312px;
+    overflow: hidden;
+  }
+  
+  .project-img-link {
+    width: 500px;
+    height: 312px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .projects-row:first-child {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
+  }
+  
+  .projects-row:last-child {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 75%;
+    margin: 0 auto;
+  }
 }
 
 .side-project {
   padding: 4.5rem 2.75rem;
-  max-width: 35rem;
+  max-width: 28rem;
   background-color: rgb(255, 255, 255, 0.1);
   box-shadow: 0 1rem 2rem 0 rgba(27, 27, 27, 0.1);
   border-radius: 1rem;
@@ -661,6 +765,193 @@ footer span {
 }
 
 /******************************************
+/* SKILLS SECTION STYLING */
+object[data="img/c.svg"],
+object[data="img/cpp.svg"],
+object[data="img/tensorflow.svg"],
+object[data="img/pytorch.svg"],
+object[data="img/numpy.svg"],
+object[data="img/pandas.svg"],
+object[data="img/opencv.svg"] {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  filter: invert(1);
+}
+
+.programming-languages .skill object[data="img/c.svg"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top: -5px;
+}
+
+object[data="img/c.svg"]:hover,
+object[data="img/cpp.svg"]:hover,
+object[data="img/tensorflow.svg"]:hover,
+object[data="img/pytorch.svg"]:hover,
+object[data="img/numpy.svg"]:hover,
+object[data="img/pandas.svg"]:hover,
+object[data="img/opencv.svg"]:hover {
+  filter: invert(1) brightness(1.5);
+}
+
+object {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+/* TYPING ANIMATION */
+.typing::after {
+  content: "|";
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* TEXT ALIGNMENT UTILITIES */
+.text-justify {
+  text-align: justify;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* MODERN ANIMATIONS AND INTERACTIONS */
+
+/* Page fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effects for project cards */
+.project {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth hover effects for buttons */
+.cta {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cta:hover::before {
+  left: 100%;
+}
+
+/* Social icons hover effects */
+.social {
+  transition: all 0.3s ease;
+}
+
+.social:hover {
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* Project image hover effects */
+.project-img-link img {
+  transition: transform 0.3s ease;
+}
+
+.project-img-link:hover img {
+  transform: scale(1.05);
+}
+
+/* Skills icons animation */
+.skill {
+  transition: transform 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+}
+
+/* Navigation link hover effects */
+.nav-link a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: rgba(24, 185, 207, 0.9);
+  transition: width 0.3s ease;
+}
+
+.nav-link a:hover::after {
+  width: 100%;
+}
+
+/* Loading animation for page sections */
+.section-animation {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Gradient animation for text highlights */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.logo,
+.name-highlight,
+.featured-projects-box h3,
+#contact span,
+footer span,
+.side-project h3,
+.side-project span {
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+/******************************************
 /* ADDITIONAL STYLES
 /* MEDIA QUERIES
 /*******************************************/
@@ -675,6 +966,10 @@ footer span {
 
   header {
     width: 100%;
+  }
+  
+  nav h1 {
+    font-size: 2.2rem;
   }
 
   .nav-social-links {
@@ -739,12 +1034,21 @@ footer span {
   }
 
   .notable-projects-box {
-    flex-flow: row wrap;
-    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .projects-row:first-child {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .projects-row:last-child {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 
   .side-project {
-    width: 35rem;
+    width: 28rem;
   }
 
   #contact {
@@ -824,8 +1128,6 @@ footer span {
     position: relative;
     padding: 2rem;
     border-radius: 0.8rem;
-    /* background: rgb(255, 255, 255, 0.05);
-    box-shadow: 0 1rem 3rem 0 rgba(27, 27, 27, 0.2); */
     -webkit-backdrop-filter: blur(2px) saturate(200%);
     backdrop-filter: blur(5px) saturate(200%);
     background-color: rgba(17, 25, 40, 0.7);
@@ -841,8 +1143,7 @@ footer span {
     height: 100%;
     bottom: 0;
     border-radius: 0.8rem;
-    /* transform: skew(-16deg); */
-    /* background-color: rgb(255, 255, 255, 0.05); */
+
     z-index: -2;
   }
 
@@ -897,6 +1198,22 @@ footer span {
 
   .project-img-link > img {
     border-radius: 1.2rem;
+    width: 500px;
+    height: 312px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  
+  .project-image-box {
+    width: 500px;
+    height: 312px;
+    overflow: hidden;
+  }
+  
+  .project-img-link {
+    width: 500px;
+    height: 312px;
   }
 
   .project-img-link > img:hover {
@@ -905,11 +1222,23 @@ footer span {
 
   .notable-projects-box {
     width: 100%;
-    flex-flow: row;
+    gap: 2rem;
+  }
+  
+  .projects-row:first-child {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 100%;
+  }
+  
+  .projects-row:last-child {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 75%;
+    margin: 0 auto;
   }
 
   .side-project {
-    max-width: 33.33%;
     background-color: rgb(255, 255, 255, 0.1);
     box-shadow: 0 1rem 2rem 0 rgba(27, 27, 27, 0.1);
     border-radius: 1rem;
@@ -939,6 +1268,10 @@ footer span {
 
   nav {
     justify-content: space-between;
+  }
+  
+  nav h1 {
+    font-size: 2.4rem;
   }
 
   .nav-menu {
@@ -1019,11 +1352,17 @@ footer span {
   }
 
   .project-image-box {
-    min-height: 100%;
+    width: 500px;
+    height: 312px;
+    overflow: hidden;
   }
 
   .project-image-box img {
-    height: 100%;
+    width: 500px;
+    height: 312px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
   }
 
   .side-project {
