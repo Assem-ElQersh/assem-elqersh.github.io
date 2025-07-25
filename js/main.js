@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.05 }); // Lower threshold for better mobile compatibility
 
         // Observe sections for animation
-        document.querySelectorAll('section, .project, .side-project').forEach(el => {
+        document.querySelectorAll('section').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     } else {
         // On mobile, ensure all elements are visible immediately
-        document.querySelectorAll('section, .project, .side-project').forEach(el => {
+        document.querySelectorAll('section').forEach(el => {
             el.style.opacity = '1';
             el.style.transform = 'translateY(0)';
         });
@@ -378,7 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Fallback: Show all elements after 2 seconds regardless
     setTimeout(() => {
-        document.querySelectorAll('section, .project, .side-project').forEach(el => {
+        document.querySelectorAll('section').forEach(el => {
             el.style.opacity = '1';
             el.style.transform = 'translateY(0)';
         });
