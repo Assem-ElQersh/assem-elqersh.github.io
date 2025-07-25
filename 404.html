@@ -18,6 +18,83 @@
     <link rel="stylesheet" href="./css/font-root-styles/general-sans.css" />
     <link rel="stylesheet" href="./css/font-root-styles/okinesans.css" />
     <link rel="stylesheet" href="./css/font-root-styles/satoshi.css" />
+    
+    <style>
+        /* 404 Page Specific Styles */
+        .error-page {
+            min-height: calc(100vh - 160px); /* Account for header and footer */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .error-code {
+            font-size: clamp(6rem, 12vw, 10rem);
+            margin: 0;
+            background: linear-gradient(90deg, rgba(24, 185, 207, 0.9) 0%, #6688ff 50%, rgba(24, 185, 207, 0.9) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: "GeneralSans 700", sans-serif;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .error-title {
+            margin: 1rem 0;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-family: "Satoshi 700", sans-serif;
+            color: rgb(208, 212, 212);
+        }
+        
+        .error-description {
+            margin: 2rem auto;
+            font-size: clamp(1.4rem, 2.5vw, 1.7rem);
+            line-height: 1.6;
+            color: rgba(208, 212, 212, 0.8);
+            max-width: 500px;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2.5rem;
+        }
+        
+        .error-actions .cta {
+            min-width: 140px;
+            white-space: nowrap;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .error-page {
+                min-height: calc(100vh - 120px);
+                padding: 1.5rem;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .error-actions .cta {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -31,18 +108,18 @@
         </nav>
     </header>
 
-    <main style="min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center;">
-        <section>
-            <h1 style="font-size: 8rem; margin: 0; color: rgba(24, 185, 207, 0.9);">404</h1>
-            <h2 style="margin: 1rem 0; font-size: 2.5rem;">Page Not Found</h2>
-            <p style="margin: 2rem 0; font-size: 1.6rem; max-width: 500px;">
+    <main class="error-page">
+        <div class="error-content">
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Page Not Found</h2>
+            <p class="error-description">
                 Oops! The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
             </p>
-            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+            <div class="error-actions">
                 <a href="/" class="cta cta1">Go Home</a>
                 <a href="/#projects" class="cta cta2">View Projects</a>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer>
