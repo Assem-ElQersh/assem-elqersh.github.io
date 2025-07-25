@@ -1,0 +1,145 @@
+/* Critical CSS - Above the fold styles for instant loading */
+/* Inline this in <head> for best performance */
+
+/* Essential font loading */
+@font-display: swap;
+
+/* Critical layout and header styles */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgb(208, 212, 212);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Critical header styles */
+header {
+  position: sticky;
+  top: 0;
+  padding: 0.75rem 2rem;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
+  z-index: 100;
+  contain: layout style paint;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  contain: layout style;
+}
+
+nav h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.logo {
+  background: linear-gradient(90deg, rgba(24, 185, 207, 0.9) 0%, #6688ff 50%, rgba(24, 185, 207, 0.9) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Mobile menu button */
+.hamburger {
+  height: 4.4rem;
+  width: 4.4rem;
+  padding: 1rem;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  z-index: 3;
+  border-radius: 0.5rem;
+  contain: layout style paint;
+}
+
+/* Critical hero section */
+main {
+  padding: 2rem;
+  min-height: 50vh;
+  contain: layout style;
+}
+
+h1 {
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.declaration {
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.name-highlight {
+  background: linear-gradient(90deg, rgba(24, 185, 207, 0.9) 0%, #6688ff 50%, rgba(24, 185, 207, 0.9) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Performance optimizations */
+.nav-menu {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  contain: layout style;
+}
+
+/* Loading state */
+.loading {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Prevent layout shift */
+.profile-img {
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  header {
+    padding: 0.75rem 2rem;
+  }
+  
+  main {
+    padding: 2rem 1.5rem;
+  }
+  
+  h1, .declaration {
+    font-size: 2.8rem;
+  }
+} 
